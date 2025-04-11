@@ -1,103 +1,113 @@
-.App {
-  font-family: sans-serif;
-  max-width: 600px;
-  margin: 40px auto;
-  text-align: left;
+/* Reset and base styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html, .app {
+  height: 100%;
+  width: 100%;
+  background: url('/spacebg.png') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #00ffe0;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+  padding: 0 1rem;
+}
+
+.center-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: white;
 }
 
 .chat-box {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 15px;
-  height: 400px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+.messages {
+  max-height: 400px;
   overflow-y: auto;
-   margin-top: 0.2rem;
-  margin-bottom: 10px;
-  background: #f9f9f9;
-  color: Black;
+  margin-bottom: 1rem;
 }
 
-.msg {
-  margin: 8px 0;
-  padding: 5px 10px;
-  border-radius: 8px;
+.message {
+  margin: 0.5rem 0;
 }
 
-.msg.user {
-  background: #dceeff;
-  text-align: right;
+.message.user {
+  color: #aefeff;
 }
 
-.msg.bot {
-  background: #e2ffe6;
-  text-align: left;
+.message.bot {
+  color: #fffbd1;
 }
 
 .input-area {
   display: flex;
-  gap: 10px;
+  gap: 0.5rem;
 }
 
-input {
+.input-area input {
   flex: 1;
-  padding: 10px;
-  font-size: 16px;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background: #007bff;
-  color: white;
+.input-area button {
+  padding: 0.7rem 1.5rem;
+  background-color: #00ffe0;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
+  font-weight: bold;
   cursor: pointer;
 }
-.orbyt-glow {
-  font-family: 'Bugaki', serif;
-  font-size: 4rem;
-  color: white;
-  text-shadow:
-    0 0 5px #fff,
-    0 0 10px #fff,
-    0 0 20px #00f0ff,
-    0 0 30px #00f0ff,
-    0 0 40px #00f0ff;
-  margin-bottom: 0.2rem;
-  animation: pulse 3s infinite ease-in-out;
+
+.input-area button:hover {
+  background-color: #00ccaa;
 }
 
-@keyframes pulse {
-  0%, 100% {
-    text-shadow:
-      0 0 5px #fff,
-      0 0 10px #fff,
-      0 0 20px #00f0ff,
-      0 0 30px #00f0ff,
-      0 0 40px #00f0ff;
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .chat-box {
+    width: 95%;
   }
-  50% {
-    text-shadow:
-      0 0 10px #fff,
-      0 0 20px #0ff,
-      0 0 30px #0ff,
-      0 0 40px #0ff,
-      0 0 60px #0ff;
+
+  .input-area {
+    flex-direction: column;
+  }
+
+  .input-area input,
+  .input-area button {
+    width: 100%;
   }
 }
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Bugaki', sans-serif; /* Your custom font */
-  background-image: url('/assets/bg.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  min-height: 100vh;
-  color: white; /* Optional - for contrast */
-}
-
-/* Optional: Overlay for better text visibility */
-
-
