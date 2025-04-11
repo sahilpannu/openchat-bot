@@ -11,6 +11,7 @@
   padding: 15px;
   height: 400px;
   overflow-y: auto;
+   margin-top: 0.2rem;
   margin-bottom: 10px;
   background: #f9f9f9;
   color: Black;
@@ -62,6 +63,7 @@ button {
     0 0 20px #00f0ff,
     0 0 30px #00f0ff,
     0 0 40px #00f0ff;
+  margin-bottom: 0.2rem;
   animation: pulse 3s infinite ease-in-out;
 }
 
