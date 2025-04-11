@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import './App.css';
 
-const API_KEY = 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; // Replace this
+const API_KEY = "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"; // Replace this
 
 function App() {
   const [messages, setMessages] = useState([]);
