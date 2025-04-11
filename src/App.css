@@ -51,3 +51,35 @@ button {
   border-radius: 6px;
   cursor: pointer;
 }
+.orbyt-glow {
+  font-family: 'Bugaki', serif;
+  font-size: 4rem;
+  color: white;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #00f0ff,
+    0 0 30px #00f0ff,
+    0 0 40px #00f0ff;
+  animation: pulse 3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px #00f0ff,
+      0 0 30px #00f0ff,
+      0 0 40px #00f0ff;
+  }
+  50% {
+    text-shadow:
+      0 0 10px #fff,
+      0 0 20px #0ff,
+      0 0 30px #0ff,
+      0 0 40px #0ff,
+      0 0 60px #0ff;
+  }
+}
+
