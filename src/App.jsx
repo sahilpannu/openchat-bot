@@ -24,10 +24,10 @@ function App() {
       headers: {
         "Authorization": `Bearer ${API_KEY}`,
         "Content-Type": "application/json",
-        "HTTP-Referer": "http://localhost" // Change to your domain when live
+        "HTTP-Referer": "https://orbyt.netlify.app" // Change to your domain when live
       },
       body: JSON.stringify({
-        model: "openchat/openchat-3.5-1210",
+        model: "openchat/openchat-3.5",
         messages: newMessages
       })
     });
