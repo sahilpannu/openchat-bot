@@ -43,7 +43,8 @@ function App() {
 
   return (
     <div className="App">
-      <h2>Orbyt</h2>
+      <h1 style={{ fontFamily: 'Bugaki, serif' }}>Orbyt </h1>
+      <h2>ChatAI</h2>
       <div className="chat-box">
         {messages.map((msg, i) => (
           <div key={i} className={`msg ${msg.role}`}>
