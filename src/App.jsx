@@ -59,7 +59,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h2 className="brand-title">Orbyt 🤖</h2>
+      <h2 className="orbyt-glow">Orbyt</h2>
 
       <div className="chat-box">
         {messages.map((msg, i) => (
