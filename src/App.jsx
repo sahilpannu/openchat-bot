@@ -43,7 +43,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="orbyt-glow">Orbyt</h1>
+      <h2 className="orbyt-glow">Orbyt</h2>
       <div className="chat-box">
         {messages.map((msg, i) => (
           <div key={i} className={`msg ${msg.role}`}>
