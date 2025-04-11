@@ -86,7 +86,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Bugaki', sans-serif; /* Your custom font */
-  background-image: url('/assets/bg.jpg');
+  background-image: url('/assets/bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
