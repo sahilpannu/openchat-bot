@@ -2,8 +2,6 @@
 import React, { useState } from 'react';
 import './App.css';
 
-const API_KEY = "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"; // Replace this
-
 function App() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
@@ -19,28 +17,33 @@ function App() {
     setInput('');
     setLoading(true);
 
-    const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${API_KEY}`,
-        "Content-Type": "application/json",
-        "HTTP-Referer": "https://orbyt.netlify.app" // Change to your domain when live
-      },
-      body: JSON.stringify({
-        model: "openchat/openchat-3.5",
-        messages: newMessages
-      })
-    });
+    try {
+      const res = await fetch("/.netlify/functions/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          model: "openchat/openchat-3.5",
+          messages: newMessages
+        })
+      });
 
-    const data = await res.json();
-    const reply = data.choices?.[0]?.message?.content || "No response.";
-    setMessages([...newMessages, { role: 'assistant', content: reply }]);
+      const data = await res.json();
+      const reply = data.choices?.[0]?.message?.content || "No response.";
+      setMessages([...newMessages, { role: 'assistant', content: reply }]);
+
+    } catch (err) {
+      console.error("Error:", err);
+      setMessages([...newMessages, { role: 'assistant', content: `Error: ${err.message}` }]);
+    }
+
     setLoading(false);
   };
 
   return (
     <div className="App">
-      <h2>OpenChat 3.5 Bot 🤖</h2>
+      <h2>Orbyt</h2>
       <div className="chat-box">
         {messages.map((msg, i) => (
           <div key={i} className={`msg ${msg.role}`}>
